@@ -1,6 +1,6 @@
 ﻿namespace FirstAPICSharp.Services.Autor
 {
-    public class AutorServices
+    public class AutorServices : IAutorInterface
     {
     }
 }
