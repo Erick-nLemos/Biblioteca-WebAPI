@@ -1,4 +1,5 @@
 ﻿using FirstAPICSharp.models;
+using FirstAPICSharp.Dtos.Autor;
 
 namespace FirstAPICSharp.Services.Autor
 {
@@ -7,5 +8,7 @@ namespace FirstAPICSharp.Services.Autor
         Task<ResponseModel<List<AutorModel>>> ListarAutores();
         Task<ResponseModel<AutorModel>> GetAutorPorId(int IdAutor);
         Task<ResponseModel<AutorModel>> GetAutorPorIdLivro(int IdLivro);
+        Task<ResponseModel<List<AutorModel>>> CriarAutor(AutorCriacaoDto autorCriacaoDto);
+        Task<ResponseModel<List<AutorModel>>> EditarAutor(AutorCriacaoDto autorCriacaoDto);
     }
 }

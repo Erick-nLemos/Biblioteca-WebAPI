@@ -1,4 +1,5 @@
-﻿using FirstAPICSharp.models;
+﻿using FirstAPICSharp.Dtos.Autor;
+using FirstAPICSharp.models;
 using FirstAPICSharp.Services.Autor;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,11 +24,25 @@ namespace FirstAPICSharp.Controllers
         }
 
         [HttpGet("GetAutorPorId/{IdAutor}")]
-        public async Task<ActionResult<ResponseModel<AutorModel>>> GetAutor(int idAutor)
+        public async Task<ActionResult<ResponseModel<AutorModel>>> GetAutor(int IdAutor)
         {
-            var autor = await this.autorInterface.GetAutorPorId(idAutor);
+            var autor = await this.autorInterface.GetAutorPorId(IdAutor);
             return Ok(autor);
-        } 
+        }
+
+        [HttpGet("GetAutorPorIdLivro/{IdLivro}")]
+        public async Task<ActionResult<ResponseModel<AutorModel>>> GetAutorPorLivro(int IdLivro)
+        {
+            var autor = await this.autorInterface.GetAutorPorIdLivro(IdLivro);
+            return Ok(autor);
+        }
+
+        [HttpPost("CriarAutor")]
+        public async Task<ActionResult<ResponseModel<AutorModel>>> CriarAutor(AutorCriacaoDto autorCriacaoDto)
+        {
+            var autores = await autorInterface.CriarAutor(autorCriacaoDto);
+            return Ok(autores);
+        }
 
     }
 }
