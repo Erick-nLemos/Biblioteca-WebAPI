@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FirstAPICSharp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93b1447d24359493d2fcf254387a5a98f3853d40")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3be4a24db59bec88586c2133d6e6ee17788b71c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("FirstAPICSharp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FirstAPICSharp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
