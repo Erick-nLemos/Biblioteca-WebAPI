@@ -44,5 +44,19 @@ namespace FirstAPICSharp.Controllers
             return Ok(autores);
         }
 
+        [HttpPut("EditarAutor")]
+        public async Task<ActionResult<ResponseModel<AutorModel>>> EditarAutor(AutorEdicaoDto autorEdicaoDto)
+        {
+            var autores = await autorInterface.EditarAutor(autorEdicaoDto);
+            return Ok(autores);
+        }
+
+        [HttpDelete("ExcluirAutor")]
+        public async Task<ActionResult<ResponseModel<AutorModel>>> ExcluirAutor(int IdAutor)
+        {
+            var autores = await autorInterface.ExcluirAutor(IdAutor);
+            return Ok(autores);
+        }
+
     }
 }

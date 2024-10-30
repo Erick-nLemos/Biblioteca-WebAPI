@@ -38,6 +38,62 @@ namespace FirstAPICSharp.Services.Autor
             }
         }
 
+        public async Task<ResponseModel<List<AutorModel>>> EditarAutor(AutorEdicaoDto autorEdicaoDto)
+        {
+            ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
+            try
+            {
+                var autor = await context.Autores.FirstOrDefaultAsync(autorBanco => autorBanco.Id == autorEdicaoDto.Id);
+                if(autor == null)
+                {
+                    resposta.Mensagem = "Autor not Found!";
+                    return resposta;
+                }
+
+                autor.Name = autorEdicaoDto.Name;
+                autor.LastName = autorEdicaoDto.LastName;
+                context.Update(autor);
+                await context.SaveChangesAsync();
+
+                resposta.Dados = await context.Autores.ToListAsync();
+                resposta.Mensagem = "Dados Editados com Sucesso!";
+
+                return resposta;
+            }
+            catch(Exception ex)
+            {
+                resposta.Mensagem = ex.Message;
+                resposta.Status = false;
+                return resposta;
+            }
+        }
+
+        public async Task<ResponseModel<List<AutorModel>>> ExcluirAutor(int IdAutor)
+        {
+            ResponseModel<List<AutorModel>> resposta = new ResponseModel<List<AutorModel>>();
+            try
+            {
+                var autor = await context.Autores.FirstOrDefaultAsync(autorBanco => autorBanco.Id == IdAutor);
+                if(autor == null)
+                {
+                    resposta.Mensagem = "Autor not Found!";
+                    return resposta;
+                }
+                context.Remove(autor);
+                await context.SaveChangesAsync();
+
+                resposta.Dados = await context.Autores.ToListAsync();
+                resposta.Mensagem = "Autor Excluido com Sucesso!";
+                
+                return resposta;
+            }
+            catch (Exception ex) {
+                resposta.Mensagem = ex.Message;
+                resposta.Status = false;
+                return resposta;
+            }
+        }
+
         public async Task<ResponseModel<AutorModel>> GetAutorPorId(int IdAutor)
         {
             ResponseModel<AutorModel> resposta = new ResponseModel<AutorModel>();

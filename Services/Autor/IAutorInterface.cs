@@ -9,6 +9,7 @@ namespace FirstAPICSharp.Services.Autor
         Task<ResponseModel<AutorModel>> GetAutorPorId(int IdAutor);
         Task<ResponseModel<AutorModel>> GetAutorPorIdLivro(int IdLivro);
         Task<ResponseModel<List<AutorModel>>> CriarAutor(AutorCriacaoDto autorCriacaoDto);
-        Task<ResponseModel<List<AutorModel>>> EditarAutor(AutorCriacaoDto autorCriacaoDto);
+        Task<ResponseModel<List<AutorModel>>> EditarAutor(AutorEdicaoDto autorEdicaoDto);
+        Task<ResponseModel<List<AutorModel>>> ExcluirAutor(int IdAutor);
     }
 }
