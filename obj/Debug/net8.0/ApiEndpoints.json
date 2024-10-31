@@ -1,15 +1,21 @@
 [
   {
-    "ContainingType": "FirstAPICSharp.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "FirstAPICSharp.Controllers.AutorController",
+    "Method": "CriarAutor",
+    "RelativePath": "api/Autor/CriarAutor",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "autorCriacaoDto",
+        "Type": "FirstAPICSharp.Dtos.Autor.AutorCriacaoDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[FirstAPICSharp.WeatherForecast, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.AutorModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -17,7 +23,254 @@
         ],
         "StatusCode": 200
       }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.AutorController",
+    "Method": "EditarAutor",
+    "RelativePath": "api/Autor/EditarAutor",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "autorEdicaoDto",
+        "Type": "FirstAPICSharp.Dtos.Autor.AutorEdicaoDto",
+        "IsRequired": true
+      }
     ],
-    "EndpointName": "GetWeatherForecast"
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.AutorModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.AutorController",
+    "Method": "ExcluirAutor",
+    "RelativePath": "api/Autor/ExcluirAutor",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdAutor",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.AutorModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.AutorController",
+    "Method": "GetAutor",
+    "RelativePath": "api/Autor/GetAutorPorId/{IdAutor}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdAutor",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.AutorModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.AutorController",
+    "Method": "GetAutorPorLivro",
+    "RelativePath": "api/Autor/GetAutorPorIdLivro/{IdLivro}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdLivro",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.AutorModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.AutorController",
+    "Method": "ListarAutores",
+    "RelativePath": "api/Autor/ListarAutores",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[FirstAPICSharp.models.AutorModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.LivroController",
+    "Method": "CriarLivro",
+    "RelativePath": "api/Livro/CriarLivros",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "livroCriacaoDto",
+        "Type": "FirstAPICSharp.Dtos.Livro.LivroCriacaoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.LivroModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.LivroController",
+    "Method": "ExcluirLivro",
+    "RelativePath": "api/Livro/DeletarLivro/{IdLivro}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdLivro",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.LivroModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.LivroController",
+    "Method": "EditarLivro",
+    "RelativePath": "api/Livro/EditarLivro",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "livroEdicaoDto",
+        "Type": "FirstAPICSharp.Dtos.Livro.LivroEdicaoDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.LivroModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.LivroController",
+    "Method": "GetLivros",
+    "RelativePath": "api/Livro/ListarLivros",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[System.Collections.Generic.List\u00601[[FirstAPICSharp.models.LivroModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "FirstAPICSharp.Controllers.LivroController",
+    "Method": "GetLivroPorId",
+    "RelativePath": "api/Livro/ListarLivros/{IdLivro}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "IdLivro",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "FirstAPICSharp.models.ResponseModel\u00601[[FirstAPICSharp.models.LivroModel, FirstAPICSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
